@@ -7,17 +7,18 @@ var path = require('path');
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var DashboardPlugin = require('webpack-dashboard/plugin');
+var HelloWorldPlugin = require('./plugins/HelloWorldPlugin.js');
 
 module.exports = {
-    devtool: '#eval-source-map',
+   /* devtool: '#eval-source-map',*/
     entry: {
       app: './components/index.jsx',
-      vendor: ['react']
+      /*vendor: ['react']*/
     },
     output: {
         path: path.resolve(__dirname, 'public/assets'),
         filename: 'js/[name].js',
-        chunkFilename: 'js/[name].[hash].js',
+        /*chunkFilename: 'js/[name].[hash].js',*/
         publicPath: '/assets/'
     },
     resolve: {
@@ -48,10 +49,9 @@ module.exports = {
             use: ['style-loader',
                 'css-loader', 'sass-loader']
         }, {
-            test: /\.(jpe?g|png|gif|svg)$/i,
-            loaders: 'url-loader?limit=10000&&name=images/[name][hash:4].[ext]'
+
         }],
-        noParse: /\.min\.js/
+        /*noParse: /\.min\.js/*/
     },
     plugins: [
         // new webpack.optimize.OccurrenceOrderPlugin(),
@@ -62,6 +62,7 @@ module.exports = {
         new webpack.ProvidePlugin({
           React: 'react',
         }),
+        new HelloWorldPlugin({options: true}),
         // new DashboardPlugin()
     ]
 }

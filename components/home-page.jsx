@@ -37,7 +37,7 @@ export default class HomePage extends React.Component {
     return <div>
       <h1>Home Page</h1>
       { 'about' in this.state && <this.state.about />}
-      <Me />
+      <Me prop1="hello"/>
     </div>
   }
 }
