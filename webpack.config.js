@@ -41,9 +41,7 @@ module.exports = {
         {
             test: /\.css$/,
             exclude: '/node_modules/',
-            use: ['style-loader',
-                'css-loader',
-            ]
+            use: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader']})
         }, {
             test: /\.scss$/,
             use: ['style-loader',
@@ -63,6 +61,7 @@ module.exports = {
           React: 'react',
         }),
         new HelloWorldPlugin({options: true}),
+        new ExtractTextPlugin('style.css')
         // new DashboardPlugin()
     ]
 }
