@@ -1,3 +1,9 @@
+const styles = {
+  h1: {
+    fontSize: '18px'
+  }
+};
+
 class Me extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +29,7 @@ export default class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    Test();
   }
 
   componentWillMount() {
@@ -35,7 +42,7 @@ export default class HomePage extends React.Component {
 
   render () {
     return <div>
-      <h1>Home Page</h1>
+      <h1 style={styles.h1}>Home Page</h1>
       { 'about' in this.state && <this.state.about />}
       <Me prop1="hello"/>
     </div>

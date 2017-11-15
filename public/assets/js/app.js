@@ -9694,7 +9694,7 @@ __webpack_require__(185);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(React.createElement(_homePage2.default, null), document.querySelector('#container'));
+_reactDom2.default.render(React.createElement(_homePage2.default, { size: 'middle' }), document.querySelector('#container'));
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49)))
 
 /***/ }),
@@ -22179,6 +22179,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var styles = {
+  h1: {
+    fontSize: '18px'
+  }
+};
+
 var Me = function (_React$Component) {
   _inherits(Me, _React$Component);
 
@@ -22228,6 +22234,7 @@ var HomePage = function (_React$Component2) {
     var _this4 = _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this, props));
 
     _this4.state = {};
+    Test();
     return _this4;
   }
 
@@ -22250,7 +22257,7 @@ var HomePage = function (_React$Component2) {
         null,
         React.createElement(
           'h1',
-          null,
+          { style: styles.h1 },
           'Home Page'
         ),
         'about' in this.state && React.createElement(this.state.about, null),
